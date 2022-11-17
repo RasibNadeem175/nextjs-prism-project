@@ -1,5 +1,8 @@
 import React, { ReactNode } from "react";
 import Header from "./Header";
+import SearchBar from "./searchbar/SearchBar"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import BookData from "../data.json"
 
 type Props = {
   children: ReactNode;
@@ -7,6 +10,7 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
+    <SearchBar placeholder="Enter a string" data ={BookData} />
     <Header />
     <div className="layout">{props.children}</div>
     <style jsx global>{`
