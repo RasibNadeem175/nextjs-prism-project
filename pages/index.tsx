@@ -3,7 +3,6 @@ import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from '../lib/prisma';
-import Header from "../components/Header";
 
 //GetServerSideProps is used when you need to wait for api, GetStaticProps when your page is not ready for build time
 export const getStaticProps: GetStaticProps = async () => {
@@ -28,7 +27,6 @@ type Props = {
 const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
-      <Header/>
       <div className="page">
         <h1>Public Feed</h1>
         <main>

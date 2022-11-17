@@ -1,7 +1,7 @@
 const SignUp: React.FC = () => {
     return (
      <div>
-        podcast
+        Signup
      </div>
     )
   }

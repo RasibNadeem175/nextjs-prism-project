@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
 import Header from "./Header";
-import SearchBar from "./searchbar/SearchBar"
+import SearchBar from "./SearchBar"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BookData from "../data.json"
+import Sidebar from "./Sidebar";
 
 type Props = {
   children: ReactNode;
@@ -10,11 +11,16 @@ type Props = {
 
 const Layout: React.FC<Props> = (props) => (
   <div>
-    <SearchBar placeholder="Enter a string" data ={BookData} />
     <Header />
+    <div className="search-nav">
+    <SearchBar placeholder="Enter a string" data ={BookData} />
+    </div>
+ 
     <div className="layout">{props.children}</div>
     <style jsx global>{`
       html {
+        margin:0;
+        background: lightgreen;
         box-sizing: border-box;
       }
 
@@ -22,6 +28,11 @@ const Layout: React.FC<Props> = (props) => (
       *:before,
       *:after {
         box-sizing: inherit;
+      }
+
+      .search-nav {
+        display: flex;
+        align-items: flex-start;
       }
 
       body {
@@ -48,7 +59,7 @@ const Layout: React.FC<Props> = (props) => (
         padding: 0 2rem;
       }
     `}</style>
-  </div>
+   </div>
 );
 
 export default Layout;
