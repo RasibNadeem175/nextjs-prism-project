@@ -6,8 +6,6 @@ const Sidebar: React.FC = () => {
         <div className="sidebar-item-1"> item 1</div>
         <div className="sidebar-item-1"> item 2</div>
         <div className="sidebar-item-1"> item 3</div>
-
-
     <style jsx>{`          
         .sidebar {
             width: 16vw;

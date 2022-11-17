@@ -9,7 +9,7 @@ function SearchBar({placeholder, data}) {
     const searchWord = event.target.value.toLowerCase()
 
     if(searchWord === "") {
-      setFilteredData("")
+      setFilteredData([])
     } else {
         const newFilter = data.filter((value) => {
         return value.title.toLowerCase().includes(searchWord);
@@ -19,8 +19,8 @@ function SearchBar({placeholder, data}) {
   };
 
   return (
-    <div className="container">
-      <div className="searchbar">
+    <div className="searchbar">
+      <div className="searchbar-input">
         <input type="text" placeholder = {placeholder} onChange={handleFilter}/>
         <div className='searchIcon'><SearchIcon/></div>
       </div>
@@ -31,23 +31,31 @@ function SearchBar({placeholder, data}) {
         <style jsx>{`
 
           .searchbar {
-            display: flex;
-            box-sizing: border-box;
+            width:100vw;
+            height: 40px
           }
 
-          .container input {
+          .searchbar-input {
+            display: flex;
+            width: 100%;
+            height: 100%;
+          }
+
+          .searchbar-input input {
             background-color: white;
             border: 0;
-            width:100vw;
+            width: 100%;
+            height: 100%;
             border-radius: 2px;
             border-top-right-radius: 0px;
+            padding: 15px;
             border-bottom-right-radius: 0px;
             font-size: 18px;
 
           }
 
           .searchIcon {
-            height: 30px;
+            height: 100%;
             width: 50px;
             background-color: white;
             display: grid;
@@ -63,19 +71,15 @@ function SearchBar({placeholder, data}) {
 
           .dataResult {
             margin-top: 5px;
-            width: 100%;
+            width: inherit;
+            max-height: 400px;
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             overflow: hidden;
             overflow-y: auto;
           }
 
-          .dataResult::-webkit-scrollbar {
-            display: none;
-          }
-
           .dataResult .dataItem {
-            width: inherit;
             display: flex;
             align-items: center;
             color: black;

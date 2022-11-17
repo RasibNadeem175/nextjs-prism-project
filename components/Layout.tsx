@@ -12,16 +12,13 @@ type Props = {
 const Layout: React.FC<Props> = (props) => (
   <div>
     <Header />
-    <div className="search-nav">
     <SearchBar placeholder="Enter a string" data ={BookData} />
-    </div>
  
     <div className="layout">{props.children}</div>
     <style jsx global>{`
       html {
-        margin:0;
-        background: lightgreen;
         box-sizing: border-box;
+        background: lightgreen;
       }
 
       *,
@@ -30,23 +27,16 @@ const Layout: React.FC<Props> = (props) => (
         box-sizing: inherit;
       }
 
-      .search-nav {
-        display: flex;
-        align-items: flex-start;
-      }
-
       body {
         margin: 0;
-        padding: 0;
+        padding 0;
         font-size: 16px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
           "Segoe UI Symbol";
-        background: rgba(0, 0, 0, 0.05);
+        background: red;
       }
-
-      input,
-      textarea {
+      input, textarea {
         font-size: 16px;
       }
 
