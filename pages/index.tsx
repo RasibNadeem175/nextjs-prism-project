@@ -1,7 +1,7 @@
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
+import Post, { PostProps } from "../components/archive/Post"
 import prisma from '../lib/prisma';
 
 //GetServerSideProps is used when you need to wait for api, GetStaticProps when your page is not ready for build time

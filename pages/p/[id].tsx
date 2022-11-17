@@ -2,7 +2,7 @@ import React from "react"
 import { GetServerSideProps, GetStaticProps } from "next"
 import ReactMarkdown from "react-markdown"
 import Layout from "../../components/Layout"
-import { PostProps } from "../../components/Post"
+import { PostProps } from "../../components/archive/Post"
 import prisma from "../../lib/prisma"
 
 // pages/p/[id].tsx

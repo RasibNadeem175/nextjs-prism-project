@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import Header from "./Header";
-import SearchBar from "./SearchBar"
+import Header from "./layout components/Header";
+import SearchBar from "./layout components/SearchBar"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BookData from "../data.json"
 import Sidebar from "./Sidebar";
