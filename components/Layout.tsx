@@ -28,8 +28,6 @@ const Layout: React.FC<Props> = (props) => (
       }
 
       body {
-        margin: 0;
-        padding 0;
         font-size: 16px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",

@@ -32,7 +32,10 @@ function SearchBar({placeholder, data}) {
 
           .searchbar {
             width:100vw;
-            height: 40px
+            height: 40px;
+            z-index: 100;
+            position: relative;
+
           }
 
           .searchbar-input {
@@ -46,9 +49,9 @@ function SearchBar({placeholder, data}) {
             border: 0;
             width: 100%;
             height: 100%;
+            padding: 15px;
             border-radius: 2px;
             border-top-right-radius: 0px;
-            padding: 15px;
             border-bottom-right-radius: 0px;
             font-size: 18px;
 
@@ -70,6 +73,7 @@ function SearchBar({placeholder, data}) {
           }
 
           .dataResult {
+            z-index: -1;
             margin-top: 5px;
             width: inherit;
             max-height: 400px;
