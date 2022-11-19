@@ -32,7 +32,8 @@ model Book {
   email   String?
   Author String?
   Synopsis String?
-  Rating Int
+  AverateRating Int
+
 }
 
 model visual_media {
@@ -43,46 +44,44 @@ model visual_media {
   movie Boolean
   Author String?
   Synopsis String?
-  Rating Int
+  AverateRating Int
 }
 
-model Podcasts {
+model Podcast {
   id      String      @id @default(cuid())
   addDate DateTime @default(now())
   name    String   @db.VarChar(255) @unique
   email   String?
   Author String?
   Synopsis String?
-  Rating Int
+  AverageRating Int
 }
 
 // media item actions TODO
 
 model Reads {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String      @id @default(cuid())
+  userid  String   @unique
+  ReadAt DateTime @default(now())
+  Rating Int
+  Review String?
 }
 
 model Watches {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String      @id @default(cuid())
+  userid  String   @unique
+  ReadAt DateTime @default(now())
+  // TODO Add check constraint for checking 1,2,3,4,5 else for reads, watches, listens
+  Rating Int
+  Review String?
 }
 
 model Listens {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String      @id @default(cuid())
+  userid  String   @unique
+  ReadAt DateTime @default(now())
+  Rating Int
+  Review String?
 }
 
 
@@ -90,7 +89,6 @@ model Listens {
 model tagsBook {
   book_id String
   book_tagId String
-
   @@unique([book_id, book_tagId])
 }
 
@@ -108,16 +106,21 @@ model tagsPodcast {
   @@unique([book_id, book_tagId])
 }
 
-
 // The actual tags
 model bookTags {
   bookTagId String @id @default(cuid())
+  tag_name String @unique
+  description String? 
 }
 
 model visualMediaTags {
   visualMediaTagId String @id @default(cuid())
+  tag_name String @unique
+  description String? 
 }
 
 model podcastTags {
-      podcastTagId String @id @default(cuid())
+  podcastTagId String @id @default(cuid())
+  tag_name String @unique
+  description String? 
 }
