@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
+
 
 function SearchBar({placeholder, data}) {
 

@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import Link from 'next/link'
 const SignIn: React.FC = () => {
     return (
       <main className={cx("form-signin","text-center","mt-5")}>
@@ -23,6 +23,7 @@ const SignIn: React.FC = () => {
         </div>
         <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
       </form>
+        <div> <Link href="/signup">Sign up</Link> instead</div>
       <style jsx>
          {`.form-signin {
            width: 100%;
