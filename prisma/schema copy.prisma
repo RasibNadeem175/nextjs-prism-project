@@ -15,7 +15,7 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  username  String   @unique
+  username  String   @unique @db.VarChar(255)
   email     String   @unique
   password  String
   createdAt DateTime @default(now())
@@ -36,7 +36,7 @@ model Book {
 
 }
 
-model visual_media {
+model Visual_media {
   id      String      @id @default(cuid())
   addDate DateTime @default(now())
   name    String   @db.VarChar(255) @unique
@@ -86,20 +86,20 @@ model Listens {
 
 
 // Extra: Tags
-model tagsBook {
+model TagsBook {
   book_id String
   book_tagId String
   @@unique([book_id, book_tagId])
 }
 
-model tagsVisual_media {
+model TagsVisual_media {
   book_id String
   book_tagId String
 
   @@unique([book_id, book_tagId])
 }
 
-model tagsPodcast {
+model TagsPodcast {
   book_id String
   book_tagId String
 
@@ -107,19 +107,19 @@ model tagsPodcast {
 }
 
 // The actual tags
-model bookTags {
+model BookTags {
   bookTagId String @id @default(cuid())
   tag_name String @unique
   description String? 
 }
 
-model visualMediaTags {
+model vVsualMediaTags {
   visualMediaTagId String @id @default(cuid())
   tag_name String @unique
   description String? 
 }
 
-model podcastTags {
+model PodcastTags {
   podcastTagId String @id @default(cuid())
   tag_name String @unique
   description String? 
