@@ -113,7 +113,7 @@ model BookTags {
   description String? 
 }
 
-model vVsualMediaTags {
+model VsualMediaTags {
   visualMediaTagId String @id @default(cuid())
   tag_name String @unique
   description String? 
