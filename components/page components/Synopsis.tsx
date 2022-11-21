@@ -1,12 +1,12 @@
 import React from 'react'
 
 type Props = {
-    Synopsis?: string;
+    synopsis: string;
 }
 
 const Synopsis = (props: Props) => {
   return (
-    <div>Synopsis</div>
+    <div>props.synopsis</div>
   )
 }
 

@@ -1,10 +1,13 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  title: String;
+  by : String; //By author or producer whatever
+}
 
 const Title = (props: Props) => {
   return (
-    <div>Title</div>
+    <div>{props.title} by {props.by}</div>
   )
 }
 

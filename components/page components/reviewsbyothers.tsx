@@ -1,10 +1,18 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  UserId: String,
+  UserName: String,
+  reviews: String
 
-function reviewsbyothers({}: Props) {
+}
+
+function reviewsbyothers(props: Props) {
   return (
-    <div>reviewsbyothers</div>
+    <>
+      <div>Review By: {props.UserName}</div>
+    <div>Review: {props.reviews}</div>
+    </>
   )
 }
 
