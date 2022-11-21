@@ -1,8 +1,8 @@
 import React from 'react'
 
 type Props = {
-    imageURL: String,
-    rating: number
+    imageURL: String;
+    rating: number;
 }
 
 const Card = (props: Props) => {

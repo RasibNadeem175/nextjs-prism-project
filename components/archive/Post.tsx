@@ -3,13 +3,13 @@ import Router from "next/router";
 import ReactMarkdown from "react-markdown";
 
 export type PostProps = {
-  id: string;
-  title: string;
+  id: String;
+  title: String;
   author: {
-    name: string;
-    email: string;
+    name: String;
+    email: String;
   } | null;
-  content: string;
+  content: String;
   published: boolean;
 };
 

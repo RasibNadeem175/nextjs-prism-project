@@ -20,7 +20,7 @@ function Body({
   lastName: string;
   profilePic: string;
   stars: number;
-  comment: string;
+  comment:string;
   timestamp: number;
 }) {
   return (

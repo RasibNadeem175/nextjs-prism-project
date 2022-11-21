@@ -1,9 +1,9 @@
 import React from 'react'
 
 type Props = {
-  UserId: String,
-  UserName: String,
-  reviews: String
+  UserId: string;
+  UserName: string;
+  reviews: string;
 
 }
 
