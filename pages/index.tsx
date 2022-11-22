@@ -6,6 +6,7 @@ import prisma from '../common/prisma';
 
 //GetServerSideProps is used when you need to wait for api, GetStaticProps when your page is not ready for build time
 
+//Currently this route shows you the list of all the blog posts
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
     where: { published: true },
