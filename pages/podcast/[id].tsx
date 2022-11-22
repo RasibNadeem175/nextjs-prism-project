@@ -10,19 +10,28 @@ const author = 'Patrick'
 const synopsis: string = 'great show !'
 const imageURL = ''
 
-const Podcast: React.FC = () => {
+type podcastProp = {
+  title: string;
+  author: string;
+  imageURL: string;
+  synopsis: string;
+  rating: number;
+
+}
+
+const Podcast: React.FC<podcastProp> = (props: podcastProp) => {
   const [value, setValue] = useState(0);
   return (
     <Layout>
     <div>
        Movie
-       <Title title={title} by={author}/>
+       <Title title={props.title} by={props.author}/>
        <Synopsis synopsis={synopsis}/>
        <Rating
            name="simple-controlled"
-           value={value}
-           onChange={(event, newValue) => {
-               setValue(newValue || 0);
+           value={props.rating}
+           onChange={(event, newRating) => {
+               setValue(newRating || 0);
            }}
        />
     </div>
